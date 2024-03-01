@@ -17,8 +17,14 @@ header {
   align-items: center;
   font-size: 1.6rem !important;
 }
-header > div {
-  cursor: default;
+header button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
 }
 
 main {
@@ -77,12 +83,14 @@ main {
   font-size: 1.2rem;
 }
 
-.category-form > div {
+.category-form > div,
+.item-form > div {
   display: flex;
   flex-direction: column;
 }
 
-.category-form input {
+.category-form input,
+.item-form input {
   border: 2px solid white;
   border-bottom: 2px solid slategrey;
   margin-bottom: 40px;
@@ -92,21 +100,29 @@ main {
 }
 .category-form input:hover,
 .category-form input:active,
-.category-form input:focus {
+.category-form input:focus,
+.item-form input:hover,
+.item-form input:active,
+.item-form input:focus {
   outline: none;
   border-bottom: 2px solid black;
 }
 .category-form textarea:hover,
 .category-form textarea:active,
-.category-form textarea:focus {
+.category-form textarea:focus,
+.item-form textarea:hover,
+.item-form textarea:active,
+.item-form textarea:focus {
   outline: none;
   border: 2px solid black;
 }
-.category-form > div > div:first-child {
+.category-form > div > div:first-child,
+.item-form > div > div:first-child {
   font-size: 1.2rem;
 }
 
-.category-form textarea {
+.category-form textarea,
+.item-form textarea {
   margin-top: 20px;
   font-size: 1.2rem;
   height: 100px;
@@ -114,7 +130,8 @@ main {
   padding: 5px;
   font-family: sans-serif;
 }
-.category-form button {
+.category-form button,
+.item-form button {
   margin-top: 20px;
   padding: 10px;
   width: 200px;
@@ -122,11 +139,19 @@ main {
   margin-bottom: 10px;
 }
 
-.category-form button:hover {
+.category-form button:hover,
+.item-form button:hover {
   border: 2px solid black;
   border-radius: 5px;
 }
 
+.item-form > div:nth-child(3) {
+  padding-top: 40px;
+}
+
+.item-form select {
+  margin-top: 10px;
+}
 .errors {
   color: red;
   font-size: 1.2rem;

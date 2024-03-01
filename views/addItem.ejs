@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inventory App | Add Item</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('partials/header.ejs') %>
+    <main>
+      <div class="ctitle">Add Item</div>
+      <form action="/item/add-item" method="POST" class="item-form">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div>
+          <label for="desc">Description</label>
+          <textarea id="desc" name="desc"></textarea>
+        </div>
+        <div>
+          <label for="price">Price</label>
+          <input type="number" name="price" id="price" />
+        </div>
+
+        <div>
+          <label for="category">Category</label>
+          <select name="category" id="category">
+            <% allCategory.forEach(item => { %>
+            <option value="<%= item.name %>"><%= item.name %></option>
+            <% }) %>
+          </select>
+        </div>
+        <button type="submit">Add</button>
+      </form>
+    </main>
+  </body>
+</html>
