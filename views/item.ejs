@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inventory App | Item</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('partials/header.ejs') %>
+
+    <main>
+      <div class="ctitle">Items</div>
+
+      <% allItems.forEach((i) => { %>
+      <div class="categories">
+        <div>- <%= i.name %></div>
+        <div>
+          <div><%= i.desc %></div>
+          <div class="item-price">$ <%= i.price %></div>
+          <div><span class="cat-span">Category: </span><%= i.category %></div>
+        </div>
+      </div>
+      <hr />
+      <% }) %>
+    </main>
+  </body>
+</html>

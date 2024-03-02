@@ -156,3 +156,15 @@ main {
   color: red;
   font-size: 1.2rem;
 }
+
+.item-price {
+  font-style: italic;
+  padding-top: 5px;
+}
+
+.categories > div:last-child > div:last-child {
+  padding-top: 5px;
+}
+.cat-span {
+  font-weight: bold;
+}

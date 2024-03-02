@@ -11,26 +11,30 @@
       <form action="/item/add-item" method="POST" class="item-form">
         <div>
           <label for="name">Name</label>
-          <input type="text" name="name" id="name" />
+          <input type="text" name="name" id="name" value="<%= data.name ? data.name : '' %>" />
         </div>
         <div>
           <label for="desc">Description</label>
-          <textarea id="desc" name="desc"></textarea>
+          <textarea id="desc" name="desc"><%= data.desc ? data.desc : '' %></textarea>
         </div>
         <div>
           <label for="price">Price</label>
-          <input type="number" name="price" id="price" />
+          <input type="number" name="price" id="price" value="<%= data.price ? data.price : '' %>" />
         </div>
 
         <div>
           <label for="category">Category</label>
           <select name="category" id="category">
             <% allCategory.forEach(item => { %>
-            <option value="<%= item.name %>"><%= item.name %></option>
+            <option value="<%= item.name %>" <%= data.category==item.name ? 'selected' : '' %>><%= item.name %></option>
             <% }) %>
           </select>
         </div>
         <button type="submit">Add</button>
+
+        <% errors.forEach(err => { %>
+          <div class="errors">*<%= err.msg %></div>
+          <% }) %>
       </form>
     </main>
   </body>
