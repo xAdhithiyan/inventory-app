@@ -20,6 +20,8 @@ Before running the application, the environmental variables must be set based on
 ## Runnning the application
 Start the application by the following command
 
-```npm start devstart```
+```
+npm start devstart
+```
 
 The application will be accessible at [localhost:3000](http://localhost:3000/)
