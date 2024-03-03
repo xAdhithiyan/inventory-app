@@ -42,3 +42,30 @@ exports.item_add = [
     }
   }),
 ];
+
+exports.item_delete = async (req, res) => {
+  try {
+    const deletedItem = await Item.findByIdAndDelete(req.params.id);
+    res.redirect('/item');
+    console;
+  } catch (err) {
+    res.status(404).json('Error: Category Not found ');
+  }
+};
+
+exports.item_update_view = asyncHandler(async (req, res) => {
+  const [item, allCategory] = await Promise.all([Item.findById(req.params.id), Category.find({})]);
+  res.render('addItem', {
+    data: item,
+    allCategory,
+    errors: [],
+    givenMethod: true,
+    item_id: item._id,
+    item_name: item.name,
+  });
+});
+
+exports.item_update = asyncHandler(async (req, res) => {
+  const category = await Item.findByIdAndUpdate(req.params.id, req.body);
+  res.redirect('/item');
+});

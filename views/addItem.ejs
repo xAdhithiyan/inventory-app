@@ -8,7 +8,7 @@
     <%- include('partials/header.ejs') %>
     <main>
       <div class="ctitle">Add Item</div>
-      <form action="/item/add-item" method="POST" class="item-form">
+      <form action="<%=typeof givenMethod == 'undefined' ? '/item/add-item' : '/item/add-item/' + item_id + '/' + item_name + '?_method=PUT' %>" method="POST" class="item-form">
         <div>
           <label for="name">Name</label>
           <input type="text" name="name" id="name" value="<%= data.name ? data.name : '' %>" />

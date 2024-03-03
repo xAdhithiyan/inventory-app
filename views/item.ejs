@@ -12,7 +12,18 @@
 
       <% allItems.forEach((i) => { %>
       <div class="categories">
-        <div>- <%= i.name %></div>
+        <div class="operations">
+          <div>- <%= i.name %></div>
+
+          <form action="/item/add-item/<%= i._id %>" method="GET">
+            <button>Update</button>
+          </form>
+
+          <!-- method override  -->
+          <form action="/item/<%= i._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+          </form>
+        </div>
         <div>
           <div><%= i.desc %></div>
           <div class="item-price">$ <%= i.price %></div>
