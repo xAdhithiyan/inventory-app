@@ -15,11 +15,11 @@ cd inventory-app
 npm install
 ```
 
-Before running the application, the environmental variables must be set based on the provided `.env.example` file.
+Before running the application, the environmental variables must be set based on the provided ```.env.example``` file.
 
 ## Runnning the application
 Start the application by the following command
 
-`npm start devstart`
+```npm start devstart```
 
 The application will be accessible at [localhost:3000](http://localhost:3000/)
