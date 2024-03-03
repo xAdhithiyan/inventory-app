@@ -12,7 +12,21 @@
 
       <% allCategory.forEach((i) => { %>
       <div class="categories">
-        <div>- <%= i.name %></div>
+        <div class="operations">
+          <div>- <%= i.name %></div>
+          <form action="/category/<%= i._id %>" method="GET">
+            <button>View</button>
+          </form>
+
+          <form action="category/add-category/<%= i._id %>" method="GET">
+            <button>Update</button>
+          </form>
+
+          <!-- method override  -->
+          <form action="/category/<%= i._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+          </form>
+        </div>
         <div><%= i.desc%></div>
       </div>
       <hr />

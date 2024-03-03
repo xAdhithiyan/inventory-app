@@ -8,7 +8,11 @@
     <%- include('partials/header.ejs') %>
     <main>
       <div class="ctitle">Add Category</div>
-      <form method="POST" ="/add-category" class="category-form">
+      <form
+        method="POST"
+        action="<%=typeof givenMethod == 'undefined' ? '/category/add-category' : '/category/add-category/' + category_id + '/' + category_name + '?_method=PUT' %>"
+        class="category-form"
+      >
         <div>
           <label for="name">Name</label>
           <input type="text" name="name" id="name" value="<%= name %>" />

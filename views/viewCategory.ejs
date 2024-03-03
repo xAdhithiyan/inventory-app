@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inventory App | Item</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('partials/header.ejs') %>
+
+    <main>
+      <div class="ctitle"><%= category.name %></div>
+      <div class="categories cat-desc">
+        <div><%= category.desc %></div>
+      </div>
+      <div class="item-desc">The Items in the Category are:</div>
+      <hr />
+      <% allItems.forEach((i) => { %>
+      <div class="categories">
+        <div>- <%= i.name %></div>
+        <div>
+          <div><%= i.desc %></div>
+          <div class="item-price">$ <%= i.price %></div>
+          <div><span class="cat-span">Category: </span><%= i.category %></div>
+        </div>
+      </div>
+      <hr />
+      <% }) %>
+      <form method="GET" action="/category">
+        <button type="submit" class="viewBtn">Go Back</button>
+      </form>
+    </main>
+  </body>
+</html>

@@ -131,7 +131,8 @@ main {
   font-family: sans-serif;
 }
 .category-form button,
-.item-form button {
+.item-form button,
+.viewBtn {
   margin-top: 20px;
   padding: 10px;
   width: 200px;
@@ -140,7 +141,8 @@ main {
 }
 
 .category-form button:hover,
-.item-form button:hover {
+.item-form button:hover,
+.viewBtn:hover {
   border: 2px solid black;
   border-radius: 5px;
 }
@@ -166,5 +168,28 @@ main {
   padding-top: 5px;
 }
 .cat-span {
+  font-weight: bold;
+}
+
+.operations {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  gap: 20px;
+}
+
+.operations button {
+  background-color: rgba(112, 128, 144, 0.7);
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.cat-desc {
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.item-desc {
   font-weight: bold;
 }

@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const methodOverride = require('method-override');
 
 // routes
 const indexRouter = require('./routes/index');
@@ -14,6 +15,9 @@ const app = express();
 
 // to parse JSON files
 app.use(express.json());
+
+// to use PUT and DELETE when submitting through forms
+app.use(methodOverride('_method'));
 
 // environment constiables
 require('dotenv').config();
@@ -32,7 +36,7 @@ async function main() {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// app.use(logger('dev'));
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // to work with req
 app.use(cookieParser());
